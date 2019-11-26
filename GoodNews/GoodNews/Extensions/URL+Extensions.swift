@@ -1,0 +1,18 @@
+//
+//  URL+Extensions.swift
+//  GoodNews
+//
+//  Created by itsector on 11/26/19.
+//  Copyright © 2019 MarianaSouza. All rights reserved.
+//
+
+import Foundation
+
+extension URL {
+   static func urlForTopHeadlines(for category: String) -> URL {
+        return URL (string: "https://newsapi.org/v2/top-headlines?country=us&category=\(category)s&apiKey=e7fa0ce198bb439091af14d2c6a2510b")!
+    }
+}
+
+
+
