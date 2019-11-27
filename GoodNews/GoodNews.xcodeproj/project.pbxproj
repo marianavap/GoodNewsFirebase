@@ -25,6 +25,8 @@
 		2D6D09A5238D888C00802B32 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D09A4238D888C00802B32 /* ArticleViewModel.swift */; };
 		2D6D09A7238D8AAA00802B32 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D09A6238D8AAA00802B32 /* UIImage+Extensions.swift */; };
 		2D6D09AA238D8C7F00802B32 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D09A9238D8C7F00802B32 /* placeholder.png */; };
+		2D6D09AC238E7AB900802B32 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D09AB238E7AB900802B32 /* UIView+Extensions.swift */; };
+		2D6D09AE238E7C4700802B32 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D09AD238E7C4700802B32 /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		2D6D09A4238D888C00802B32 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		2D6D09A6238D8AAA00802B32 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		2D6D09A9238D8C7F00802B32 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		2D6D09AB238E7AB900802B32 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		2D6D09AD238E7C4700802B32 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 			children = (
 				2D6D099F238D627C00802B32 /* URL+Extensions.swift */,
 				2D6D09A6238D8AAA00802B32 /* UIImage+Extensions.swift */,
+				2D6D09AB238E7AB900802B32 /* UIView+Extensions.swift */,
+				2D6D09AD238E7C4700802B32 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,9 +365,11 @@
 				2D6D095D238D2C9700802B32 /* AppDelegate.swift in Sources */,
 				2D6D09A7238D8AAA00802B32 /* UIImage+Extensions.swift in Sources */,
 				2D6D098D238D2EE900802B32 /* ThemeManager.swift in Sources */,
+				2D6D09AC238E7AB900802B32 /* UIView+Extensions.swift in Sources */,
 				2D6D09A3238D825700802B32 /* CategoryListViewModel.swift in Sources */,
 				2D6D09A0238D627C00802B32 /* URL+Extensions.swift in Sources */,
 				2D6D0995238D5A8200802B32 /* Webservice.swift in Sources */,
+				2D6D09AE238E7C4700802B32 /* Date+Extensions.swift in Sources */,
 				2D6D09A5238D888C00802B32 /* ArticleViewModel.swift in Sources */,
 				2D6D098F238D326C00802B32 /* NewsHeadlinesTableViewController.swift in Sources */,
 				2D6D0998238D5DF200802B32 /* Category.swift in Sources */,
