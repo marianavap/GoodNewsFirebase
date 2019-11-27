@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -63,6 +64,7 @@
                                     <outlet property="descriptionLabel" destination="2Qi-Ve-JDd" id="Y8M-Ll-iaH"/>
                                     <outlet property="headlineImageView" destination="Fgj-Yy-HRS" id="6Ke-FC-hVM"/>
                                     <outlet property="titleLabel" destination="5Ve-cG-Oh5" id="UyI-UP-4II"/>
+                                    <segue destination="KEa-ev-3u2" kind="show" identifier="NewsDetailsViewController" id="FJW-K3-8k7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -76,6 +78,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NZ-Ek-cCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="779.71014492753625" y="169.41964285714286"/>
+        </scene>
+        <!--News Details View Controller-->
+        <scene sceneID="3r5-mH-wfL">
+            <objects>
+                <viewController id="KEa-ev-3u2" customClass="NewsDetailsViewController" customModule="GoodNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RQX-6G-RYa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Puz-Ee-wgc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8le-xt-8Yp" firstAttribute="trailing" secondItem="Puz-Ee-wgc" secondAttribute="trailing" id="4b4-92-Zbe"/>
+                            <constraint firstItem="Puz-Ee-wgc" firstAttribute="leading" secondItem="8le-xt-8Yp" secondAttribute="leading" id="ESA-XS-qqB"/>
+                            <constraint firstItem="8le-xt-8Yp" firstAttribute="bottom" secondItem="Puz-Ee-wgc" secondAttribute="bottom" id="rGf-TU-C5I"/>
+                            <constraint firstItem="Puz-Ee-wgc" firstAttribute="top" secondItem="8le-xt-8Yp" secondAttribute="top" id="utP-c6-KQ5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8le-xt-8Yp"/>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="Puz-Ee-wgc" id="8bO-a5-B6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ANZ-xT-zhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="167"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xBp-hL-lKs">

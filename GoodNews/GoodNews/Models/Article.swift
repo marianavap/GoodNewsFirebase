@@ -2,7 +2,7 @@
 //  Article.swift
 //  GoodNews
 //
-//  Created by itsector on 11/26/19.
+//  Created by MarianaSouza on 11/26/19.
 //  Copyright © 2019 MarianaSouza. All rights reserved.
 //
 
@@ -18,13 +18,31 @@ struct Article: Decodable {
     let description: String?
     let url: String?
     let imageURL: String?
+    let sourceName: String
     
-    private enum CodingKeys: String, CodingKey {
+    private enum ArticleKeys: String, CodingKey {
         case title
         case description
         case url
         case imageURL = "urlToImage"
-    }    
+        case source
+    }
+    
+    private enum SourceKeys: String, CodingKey {
+        case name
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ArticleKeys.self)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.description = try? container.decode(String.self, forKey: .description)
+        self.url = try? container.decode(String.self, forKey: .url)
+        self.imageURL = try? container.decode(String.self, forKey: .imageURL)
+        
+        let sourceContainers = try container.nestedContainer(keyedBy: SourceKeys.self, forKey: .source)
+        
+        self.sourceName = try sourceContainers.decode(String.self, forKey: .name)
+    }
 }
 
 extension Article {

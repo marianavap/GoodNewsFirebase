@@ -2,7 +2,7 @@
 //  NewsHeadlinesTableViewController.swift
 //  GoodNews
 //
-//  Created by itsector on 11/26/19.
+//  Created by MarianaSouza on 11/26/19.
 //  Copyright © 2019 MarianaSouza. All rights reserved.
 //
 
@@ -34,6 +34,13 @@ class NewsHeadlinesTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let name = self.categoryListVM.categoryAtIndex(index: section).name
+        
+        return UIView.viewForSectionHeader(title: name)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.categoryListVM == nil ? 0 : self.categoryListVM.numberOfSections
     }
@@ -48,11 +55,34 @@ class NewsHeadlinesTableViewController: UITableViewController {
             fatalError("NewsHeadlineTableViewCell not found")
         }
         
-        let articleVM = self.categoryListVM.categoryAtIndex(index: indexPath.section).articleAtIndex(index: indexPath.row)
+        let articleVM = self.categoryListVM.categoryAtIndex(index: indexPath.section).articleAtIndex(indexPath.row)
         
         cell.configure(vm: articleVM)
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.categoryListVM.heightForHeaderInSection(section)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewsDetailsViewController" {
+            prepareSegueForNewsDetails(segue)
+        }
+    }
+    
+    private func prepareSegueForNewsDetails (_ segue: UIStoryboardSegue) {
+        guard let newsDetailsVC = segue.destination as? NewsDetailsViewController else {
+            fatalError("NewsDetailsViewController is not defined")
+        }
+        
+        guard let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("Unable to get the selected row")
+        }
+        
+        let articleVM = self.categoryListVM.categoryAtIndex(index: indexPath.section).articleAtIndex(indexPath.row)
+        
+        newsDetailsVC.article = articleVM.article
+    }
 }

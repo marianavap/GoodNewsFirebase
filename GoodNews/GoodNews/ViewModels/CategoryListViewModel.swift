@@ -2,7 +2,7 @@
 //  CategoryListViewModel.swift
 //  GoodNews
 //
-//  Created by itsector on 11/26/19.
+//  Created by MarianaSouza on 11/26/19.
 //  Copyright © 2019 MarianaSouza. All rights reserved.
 //
 
@@ -34,7 +34,7 @@ extension CategoryListViewModel {
     }
     
     func articleForSectionAtIndex(section: Int, index: Int ) -> ArticleViewModel {
-        return categoryAtIndex(index: section).articleAtIndex(index: index)
+        return categoryAtIndex(index: section).articleAtIndex(index)
     }
 }
 
@@ -44,7 +44,7 @@ struct CategoryViewModel {
 }
 
 extension CategoryViewModel {
-    func articleAtIndex(index: Int) -> ArticleViewModel {
+    func articleAtIndex(_ index: Int) -> ArticleViewModel {
         let article = self.articles[index]
         return ArticleViewModel(article)
     }
